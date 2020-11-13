@@ -1,0 +1,39 @@
+<h3><a href="/osusume/admin/new">記事作成</a></h3>
+<h3><a href="/osusume/categories/new">カテゴリー作成</a></h3>
+
+<h2>記事一覧</h2>
+
+<table>
+  <tr>
+      <th>状態</th><th>タイトル</th><th>ライター</th><th>投稿日時</th><th>紹介文</th>
+  </tr>
+  <% @articles.each do |obj| %>
+  <tr>
+    <td><% if obj.status == true %>公開<% else %>下書き<% end %></td>
+    <td><a href="/osusume/admin/<%= obj.id %>"><%= obj.title %></a></td>
+    <td><%= obj.writer %></td>
+    <td><%= obj.my_date.to_date %></td>
+    <td><%= obj.intro %></td>
+    <td><a href="/osusume/admin/<%= obj.id %>/edit">編集</a></td>
+    <td><%= link_to '削除', admin_path(obj), method: :delete, data: { confirm: 'このデータを削除しますか?' } %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<h2>カテゴリ一覧</h2>
+
+<table>
+  <tr>
+      <th>カテゴリ名</th>
+  </tr>
+  <% @categories.each do |obj| %>
+  <tr>
+    <td><%= obj.name %></td>
+    <td><a href="/osusume/categories/<%= obj.id %>/edit">編集</a></td>
+    <td><%= link_to '削除', obj, method: :delete, data: { confirm: 'このデータを削除しますか?' } %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%=link_to 'サインアウト', destroy_account_session_path, method: :delete %>

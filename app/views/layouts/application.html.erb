@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>おすまる</title>
+    <%= csrf_meta_tags %>
+    <meta name="keywords" content="マルチVRゲーム,おすすめ,VR,マルチ,ゲーム,紹介,プロンティアットVR,おすまる">
+    <meta name="description" content="マルチVRゲームのおすすめを紹介するサイトです！！　同志社ローム記念館プロジェクト　プロンティアットVR">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+<body>
+  <header>
+     <p><a href="/osusume/top"><%= image_tag 'logo.png' %></a></p>
+  </header>
+    <%= yield %>
+    <footer>
+        <a href="http://www.prontiatvr.com/"><p id="hpLink">◀プロンティアットVR　公式HP</p></a><br>
+        <p id="tyosaku">©2018 ProntiatVR
+        </p>
+        <div id="clear"></div>
+    </footer>
+  </body>
+</html>

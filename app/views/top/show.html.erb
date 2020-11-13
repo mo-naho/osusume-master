@@ -1,0 +1,58 @@
+<% provide(:title, "SHOW") %>
+
+<div id="osusume">
+    <div id="aside">
+    <h2>最新の記事</h2>
+    <% @articles.each do |obj| %>
+      <% if obj.status == true %>
+        <a href="/osusume/top/<%= obj.id %>"><p id="new"><%= obj.title %></p></a>
+      <% end %>
+    <% end %>
+    <h2 id='category'>カテゴリ一覧</h2>
+    <% @categories.each do |obj| %>
+      <p id="category"><%= obj.name %></p>
+    <% end %>
+  </div>
+
+  <div id="main2">
+    <div id="dArticle">
+      <div id="samune"><%= image_tag @article.image.to_s , :size => '400x250' %></div>
+      <div id="mini">
+       <p id ="date"><%= @article.my_date.to_date %></p>
+       <p id="writer">writer:<%= @article.writer %></p>
+       <h1 id="title"><%= @article.title %></h1>
+       <% @article.categories.each do |c| %>
+          <p id="category"><%= c.name %></p>
+        <% end %>
+        <div class="box24"><p><%= @article.intro %></p></div>
+      </div>
+      <div class="clear"></div>
+      <div id="articleMain"<p><%= @article.main.html_safe %></p></div>
+      <a href="/osusume/top/index" class="square_btn">戻る</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+<!--
+<div class="clear"></div>
+--->
+
+  <div id="mobile_main2" class="clerafix">
+    <p id ="date2"><%= @article.my_date.to_date %></p>
+    <p id="writer2">writer:<%= @article.writer %></p>
+    <div id="headline" class="clearfix">
+      <div id="samune2"><%= image_tag @article.image.to_s , :size => '160x160' %></div>
+      <div id="title_category">
+        <h1 id="title2"><%= @article.title %></h1>
+        <% @article.categories.each do |c| %>
+          <p id="category2"><%= c.name %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="box24"><p><%= @article.intro %></p></div>
+    <div id="articleMain2"<p><%= @article.main.html_safe %></p></div>
+    <a href="/osusume/top/index" class="square_btn">戻る</a>
+  </div>
+
+</div>

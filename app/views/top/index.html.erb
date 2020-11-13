@@ -1,0 +1,70 @@
+<% provide(:title, "TOP") %>
+
+<%= image_tag 'header.png' , :id => 'multi'%>
+<%= image_tag 'mobile_header.png' , :id => 'mobile_multi'%>
+
+
+<div id="osusume">
+  <div id="aside">
+    <h2>最新の記事</h2>
+    <% @articles.each do |obj| %>
+      <% if obj.status == true %>
+        <a href="/osusume/top/<%= obj.id %>"><p id="new"><%= obj.title %></p></a>
+      <% end %>
+    <% end %>
+    <h2 id='category'>カテゴリ一覧</h2>
+    <% @categories.each do |obj| %>
+      <p id="category"><%= obj.name %></p>
+    <% end %>
+  </div>
+  <!-- スマホ用の最新の記事 -->
+  <div id="aside2">
+    <h2>最新の記事</h2>
+  </div>
+
+  <div id="main"><!---パソコン用記事-->
+    <% @articles.each do |obj| %>
+      <% if obj.status == true %>
+        <div id= "article">
+          <a href="/osusume/top/<%= obj.id %>"><%= image_tag obj.image.to_s, :size => '100x150' , :id => 'arImg' %></a></br>
+
+          <div id="content">
+            <p id="date"><%= obj.my_date.to_date %></p></br>
+            <div class="clear"></div>
+            <a href="/osusume/top/<%= obj.id %>" id="title"><h2 id="title"><%= obj.title %></h2></a>
+             <% obj.categories.each do |c| %>
+                <p id="category"><%= c.name %></p>
+              <% end %>
+            <a href="/osusume/top/<%= obj.id %>" id="intro"><p id="intro"><%= obj.intro %></p></a>
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="mobile_main"><!---スマホ用記事-->
+    <% @articles.each do |obj| %>
+      <% if obj.status == true %>
+        <div id= "mobile_article">
+          <a href="/osusume/top/<%= obj.id %>" id="image"><%= image_tag obj.image.to_s, :size => '100x150' , :id => 'arImg' %></a></br>
+
+          <div id="mobile_content">
+            <div id="mobile_right">
+              <p id="mobile_date"><%= obj.my_date.to_date %></p><br>
+              <% obj.categories.each do |c| %>
+              <p id="mobile_category"><%= c.name %></p>
+              <% end %><br>
+              <a href="/osusume/top/<%= obj.id %>" id="mobile_title"><h2 id="mobile_title"><%= obj.title %></h2></a>
+            </div>
+            <div class="clear"></div>
+            <a href="/osusume/top/<%= obj.id %>"><p id="mobile_intro"><%= obj.intro %></p></a>
+          </div>
+
+          <hr>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+</div>

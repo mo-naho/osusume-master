@@ -1,0 +1,507 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+　　　　　　　　　　　　　　　PC版
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*------------------------------------
+　全体
+--------------------------------------*/
+html, body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgba(242,242,242,1);
+}
+#osusume{
+  max-width: 1255px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/*------------------------------------
+　ヘッダー
+--------------------------------------*/
+header{
+  background-color: rgba(95,180,255,1);
+  height: 40px;
+  padding: 1px;
+}
+header img{
+  width: 120px;
+  margin-left: 10px;
+  position: relative;
+  bottom: 18px;
+}
+#multi{
+  width: 100%;
+}
+#mobile_multi{
+  display: none;
+}
+/*------------------------------------
+メイン
+--------------------------------------*/
+#main{
+  float: right;
+  width: 70%;
+  margin: 2.2% 0;
+  margin-bottom: 4%;
+  margin-right: 3%;
+  background-color: rgba(242,242,242,1);
+}
+#mobile_main{
+  display: none;
+}
+
+/*------------------------------------
+記事
+--------------------------------------*/
+#article{
+  background-color: white;
+  width: 27%;
+  height: 430px;
+  margin-left: 4%;
+  margin-top: 4%;
+  float: left;
+  border: 1px solid rgba(222,222,222,1);
+}
+#content a:hover {
+  text-decoration: underline;
+}
+#content a#title{
+  color: #F5A21B;
+}
+#content a#intro{
+  color: black;
+}
+#arImg{
+  width: 100%;
+}
+#content{
+  padding: 0 10px;
+}
+#content h2#title{
+  color: #F5A21B;
+  line-height: 1.2em;
+  margin: 0;
+  margin-top: -5px;
+  font-weight: bold;
+  font-size: 18pt;
+}
+#content p#date{
+  margin: 0;
+  float: right;
+  font-size: 7pt;
+}
+#content p#intro{
+  line-height: 1.4em;
+  margin-top: 40px;
+  color: black;
+}
+#content p#category{
+  margin: 5px 9px 0 0;
+  font-size: 7pt;
+  float: left;
+  border-bottom: 1px dotted rgba(95,180,255,1);
+}
+
+/*------------------------------------
+アサイド
+--------------------------------------*/
+#aside{
+  background-color: white;
+  border: 1px solid rgba(222,222,222,1);
+  width: 20%;
+  margin: 5% 0;
+  padding:  30px 10px;
+  margin-left: 3%;
+  float: left;
+}
+#aside p#new{
+  margin: 0 10px;
+  border-bottom: 1px rgba(95,180,255,1) dotted;
+}
+#aside p#category{
+  margin: 0 10px;
+  border-bottom: 1px rgba(95,180,255,1) dotted;
+}
+#aside a{
+  color: black;
+}
+#aside a:hover {
+  text-decoration: underline;
+}
+#aside h2:first-child{
+  margin: 0px;
+}
+#aside h2{
+  color: #F5A21B;
+  font-size: 18pt;
+}
+#aside h2#category{
+  margin-bottom: 10px;
+}
+#aside2{
+  display: none;
+}
+
+
+/*------------------------------------
+　記事詳細
+--------------------------------------*/
+#main2{
+  background-color: white;
+  border: 1px solid rgba(222,222,222,1);
+  float: right;
+  width: 70%;
+  margin: 5% 0;
+  margin-right: 3%;
+}
+#dArticle{
+  margin: 40px;
+}
+#dArticle h1#title{
+  padding: 10px 0;
+  line-height: 1em;
+  color: #F5A21B;
+}
+#samune{
+  width: 50%;
+  margin: 0;
+  float: right;
+}
+#samune img{
+  width: 100%;
+}
+#mini{
+  width: 45%;
+  margin: 0;
+}
+#mini p#date{
+  margin: 0;
+  float: left;
+  font-size: 10pt;
+}
+#mini p#writer{
+  margin: 0;
+  text-align: right;
+  font-size: 10pt;
+}
+#mini p#category{
+  margin: 0;
+  margin-right: 9px;
+  font-size: 10pt;
+  float: left;
+  border-bottom: 1px dotted rgba(95,180,255,1);
+
+}
+ #articleMain{
+   margin: 0;
+ }
+
+#articleMain h1,#articleMain h2,#articleMain h3,#articleMain h4,#articleMain h5,#articleMain h6{
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+}
+
+
+.box24 {
+  position: relative;
+  padding: 0.5em 0.7em;
+  margin: 4em 0;
+  background: #e6f4ff;
+  color: #5c98d4;
+  font-weight: bold;
+}
+.box24:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e6f4ff;
+  width: 0;
+  height: 0;
+}
+.box24 p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+.square_btn {
+  margin-top: 2em;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  border-radius: 0 15px 15px 0;
+  transition: .4s;
+}
+
+.square_btn:hover {
+  background: #636363;
+}
+#mobile_main2{
+  display: none;
+}
+
+/*------------------------------------
+　フッター
+--------------------------------------*/
+footer{
+  background-color: rgba(95,180,255,1);
+  height: 40px;
+  position: relative;
+  bottom: -20px;
+}
+footer p{
+  line-height: 40px;
+}
+footer p#hpLink{
+  color: white;
+  float: left;
+  margin: 0 15px 0;
+  position: absolute;
+  bottom: 0;
+}
+footer p#tyosaku{
+  color: white;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+footer br{
+  display: none;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+　　　　　　　　　　　　　　　MOBILE版
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width:480px){
+/*------------------------------------
+全体
+--------------------------------------*/
+#osusume{
+  max-width: 480px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 10px;
+  width: 90%;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  background-color: white;
+}
+.clearfix{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/*------------------------------------
+ヘッダー
+--------------------------------------*/
+header{
+  height: 60px;
+}
+header img{
+  width: 150px;
+  margin-left: -2px;
+  bottom: 14px;
+}
+#multi{
+  display: none;
+}
+#mobile_multi{
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  height: auto;
+  background-color: white;
+}
+
+/*------------------------------------
+メイン
+--------------------------------------*/
+#main{
+  display: none;
+  float: none;
+}
+#mobile_main{
+  display: block;
+  width: 100%;
+}
+#mobile_main a#image{
+  float: left;
+  height: 0;
+  padding: 5px;
+}
+#mobile_main img{
+  width: 120px;
+  height: 120px;
+  padding: 1px;
+  border: 0.6px solid rgb(106, 191, 252);
+}
+
+/*------------------------------------
+記事
+--------------------------------------*/
+#mobile_article{
+  width: auto;
+  float: none;
+  height: 260px;
+}
+#mobile_content{
+  padding: 0 17px;
+}
+#mobile_right{
+  float: left;
+  margin-left: 130px;
+  width: 65%;
+  height: 120px;
+  position: relative;
+  bottom: 19px;
+}
+#mobile_date{
+  text-align: left;
+}
+#mobile_intro{
+  color: black;
+  line-height: normal;
+}
+h2#mobile_title{
+  position: relative;
+  top: 2px;
+  color: #F5A21B;
+}
+p#mobile_date{
+  display: inline;
+  float: none;
+}
+p#mobile_category{
+  display: inline;
+  float: none;
+  position: relative
+}
+
+hr{
+  border: none;
+  border-top: 2px dashed rgb(79, 162, 222);
+}
+
+/*------------------------------------
+アサイド
+--------------------------------------*/
+#aside{
+  display: none;
+  float: none;
+}
+#aside2{
+  color: #F5A21B;
+  font-size: 18pt;
+  background-color: white;
+  display: block;
+  text-align: center;
+  height: 50px;
+  margin-top: 50px;
+  text-decoration: underline;
+}
+#aside2 h2{
+  padding: 0 11px;
+  position: relative;
+  top: -23px;
+}
+
+/*------------------------------------
+記事詳細
+--------------------------------------*/
+#main2{
+  display: none;
+}
+#mobile_main2{
+  display: block;
+  width: 400px;
+}
+#date2{
+  display: inline;
+  margin: 0 30px 10px 20px;
+}
+#writer2{
+  display: inline;
+  margin: 0 10px 10px 60px;
+}
+#headline{
+  margin: 5px 0 10px;
+  padding: 0 0 0 10px;
+  width: 90%;
+}
+#samune2{
+  padding: 1.5px;
+  border: 0.6px solid rgb(106, 191, 252);
+  float: left;
+}
+#title_category{
+  float: right;
+}
+#title2{
+  width: 170px;
+  color: #F5A21B;
+  margin: 3px 0 0;
+}
+#category2{
+  margin: 3px 0;
+  display: inline;
+  margin: 0 5px;
+}
+.box24{
+  width: 90%;
+  margin: 0 0 20px;
+}
+#articleMain2{
+  width: 90%;
+  line-height: 10px;
+  margin: 50px 0 0 10px;
+}
+
+
+/*------------------------------------
+フッター
+--------------------------------------*/
+footer{
+  height: 90px;
+  position: relative;
+  top: 30px;
+}
+footer p{
+  line-height: 30px;
+}
+footer p#hpLink{
+  width: 400px;
+  margin: 10px 0 0 10px;
+  position: relative;
+}
+footer p#tyosaku{
+  width: auto;
+  text-align: right;
+  margin: 0 20px 20px 0;
+  float: right;
+}
+footer br{
+  display: inline;
+}
+
+}//@media screen and (max-width:480px)のかっこ
